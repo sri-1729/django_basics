@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Home </title>
+		<link href="{% static 'index/styles.css' %}" rel="stylesheet">
+	<body>
+		<h1>Welcome to the home page</h1>
+		<h2>Our Users</h2>
+		<ul>
+		{% for user in users %}
+			<li>{{user}}
+		{% endfor %}
+		</ul>
+		<a href={% url 'ind:add'%}>Add User</a>
+	</body>
+</html>

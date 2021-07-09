@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Home </title>
+		<link href="{% static 'index/styles.css' %}" rel="stylesheet">
+	<body>
+		<h1>Add User</h1>
+		<form action="{% url 'ind:add' %}" method="POST">
+			{% csrf_token %} <!-- ensures server recieves correct form or valid form !-->
+			{{ form }} <!-- form variable in views.py-->
+			<input type="submit">
+		</form>
+		<a href="{% url 'ind:index' %}">Home Page</a>
+	</body>
+</html>
+
