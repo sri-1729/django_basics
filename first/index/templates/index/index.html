@@ -9,7 +9,7 @@
 		<h2>Our Users</h2>
 		<ul>
 		{% for user in users %}
-			<li>{{user}}
+			<li>{{user.user_name}}:  "{{user.motto}}"
 		{% endfor %}
 		</ul>
 		<a href={% url 'ind:add'%}>Add User</a>
