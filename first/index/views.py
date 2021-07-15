@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django import forms
 from django.urls import reverse
@@ -29,3 +29,14 @@ def add(response):
         "form": userform()
 
     })
+
+def delete(response):
+    if response.method == "POST":
+        us = response.POST.getlist("ch[]")
+        users.objects.filter(id__in = us).delete()
+        return HttpResponseRedirect(reverse("ind:index"))
+    x = users.objects.all()
+    return render(response, "index/delete.html",{
+            "users" : x
+        })
+

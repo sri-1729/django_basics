@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Home </title>
+		<link href="{% static 'index/styles.css' %}" rel="stylesheet">
+	<body>
+		<h1>Delete User</h1>
+		<form action="{% url 'ind:del' %}" method="POST" autocomplete="off">
+			{% csrf_token %}
+			{% for user in users %}
+			<input type="checkbox" id="{{user.user_name}}" name = "ch[]" value = "{{user.id}}" >
+			<label for="{{user.user_name}}">{{user.user_name}}</label>
+			<br>
+			{% endfor %}
+			<input type="submit">
+		</form>
+		<a href="{% url 'ind:index' %}">Home Page</a>
+	</body>
+</html>
+
+

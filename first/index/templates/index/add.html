@@ -6,8 +6,8 @@
 		<link href="{% static 'index/styles.css' %}" rel="stylesheet">
 	<body>
 		<h1>Add User</h1>
-		<form action="{% url 'ind:add' %}" method="POST">
-			{% csrf_token %} <!-- ensures server recieves correct form or valid form !-->
+		<form action="{% url 'ind:add' %}" method="POST" autocomplete="off">
+			{% csrf_token %} <!-- ensures server recieves correct form or valid form -->
 			{{ form }} <!-- form variable in views.py-->
 			<input type="submit">
 		</form>
