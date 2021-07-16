@@ -5,14 +5,20 @@
 		<title> Home </title>
 		<link href="{% static 'index/styles.css' %}" rel="stylesheet">
 	<body>
-		<h1>Welcome to the home page</h1>
-		<h2>Our Users</h2>
-		<ul>
+		<h1>MOTTO of our users</h1>
+		<table>
+			<tr>
+				<th>User</th>
+				<th>Motto</th>
+			</tr>
 		{% for user in users %}
-			<li>{{user.user_name}}:  "{{user.motto}}"
+			<tr>
+				<td>{{user.user_name}}</td>
+				<td>"{{user.motto}}"</td>
+			</tr>
 		{% endfor %}
-		</ul>
+		</table>
 		<a href={% url 'ind:add'%}>Add User</a>
-		<a href={% url 'ind:del' %}>Delete_User</a>
+		<a href={% url 'ind:del' %}>Delete User</a>
 	</body>
 </html>

@@ -1,14 +1,42 @@
-body{
-	font-family: "sans-serif";
+* {
+	font-family: "Helvetica";
 }
 
 h1{
-	font-family: "sans-serif";
 	font-size: 40px;
 	text-align: center;
 }
 
 li{
-	font-size: 30px;
+	font-size: 15px;
+}
+
+a:link, a:visited{
+	position: relative;
+	top: 30px;
+	font-size:14px;
+	padding: 8px 10px;
+	background-color: #e6e6e6;
+	color: black;
+	text-decoration: none;
+	border-radius: 7px;
+}
+
+a:hover, a:active{
+	position: relative;
+	top: 30px;
+	font-size: 14px;
+	padding: 8px 10px;
+	background-color: #3366ff;
+	color: white;
+	text-decoration: none;
+	border-radius: 7px;
+
+}
+
+table, tr, td, th{
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 8px 10px;
 }
 
